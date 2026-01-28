@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { DayContent, ROIEntry, AITool, AI_TOOLS } from "@/lib/types";
 import ROIModal from "./ROIModal";
+import AILogo from "./AILogos";
 
 interface DayViewProps {
   content: DayContent;
@@ -25,14 +26,9 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
   const handleCreateRequest = async () => {
     if (!userInput.trim()) return;
 
-    // Merge user input with template
     const merged = content.template.replace("{{USER_INPUT}}", userInput.trim());
     setMergedRequest(merged);
-
-    // Copy to clipboard
     await navigator.clipboard.writeText(merged);
-
-    // Move to step 3
     setCurrentStep(3);
   };
 
@@ -84,8 +80,22 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{content.title}</h1>
       <p className="text-xl text-gray-300 mb-8">{content.theWhy}</p>
 
+      {/* Clear Task Overview */}
+      <div className="bg-gradient-to-r from-executive-accent/20 to-transparent border-l-4 border-executive-accent rounded-r-xl p-6 mb-8">
+        <h2 className="text-lg font-semibold text-executive-accent mb-3">📋 YOUR TASK</h2>
+        <p className="text-xl text-white leading-relaxed">{content.theTask}</p>
+      </div>
+
+      {/* Clear Instructions Overview */}
+      <div className="bg-gradient-to-r from-green-500/20 to-transparent border-l-4 border-green-500 rounded-r-xl p-6 mb-8">
+        <h2 className="text-lg font-semibold text-green-400 mb-3">🎯 WHAT TO ASK THE AI</h2>
+        <p className="text-xl text-white leading-relaxed">{content.instructions}</p>
+      </div>
+
       {/* Main Workflow Card */}
       <div className="bg-executive-card border border-executive-border rounded-2xl p-6 md:p-8">
+        <h2 className="text-xl font-bold text-white mb-6 text-center">Follow These 3 Steps</h2>
+
         {/* Step Progress Indicator */}
         <div className="flex items-center justify-center mb-8">
           {[1, 2, 3].map((step, index) => (
@@ -119,7 +129,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
             </h2>
           </div>
           <p className="text-gray-400 mb-4 ml-11">
-            Don't worry about formatting, just paste it all in. We'll clean it up for you.
+            Don't worry about formatting, just paste it all in. We'll combine it with the instructions above.
           </p>
           <div className="ml-11">
             <textarea
@@ -147,7 +157,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
             <h2 className="text-xl font-semibold text-white">Create My AI Request</h2>
           </div>
           <p className="text-gray-400 mb-4 ml-11">
-            We'll combine your {content.inputLabel.toLowerCase()} with our instructions to create the perfect request.
+            We'll combine your {content.inputLabel.toLowerCase()} with the instructions and copy it to your clipboard.
           </p>
           <div className="ml-11">
             {currentStep < 3 ? (
@@ -169,7 +179,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
               <div className="bg-green-500/10 border border-green-500 rounded-xl p-4 text-center">
                 <span className="text-green-500 font-semibold text-lg flex items-center justify-center gap-2">
                   <span className="text-2xl">✓</span>
-                  Request Created & Copied!
+                  Request Created & Copied to Clipboard!
                 </span>
               </div>
             )}
@@ -191,34 +201,24 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
             </h2>
           </div>
           <p className="text-gray-400 mb-4 ml-11">
-            Your request is ready! Click the button below, then paste (⌘V on Mac, Ctrl+V on Windows).
+            Click the button, then paste with <strong>⌘V</strong> (Mac) or <strong>Ctrl+V</strong> (Windows)
           </p>
           <div className="ml-11">
             <a
               href={aiTool?.url || "https://chat.openai.com"}
               target="_blank"
               rel="noopener noreferrer"
-              className={`block w-full py-6 rounded-xl font-bold text-2xl text-center transition-all ${
+              className={`flex items-center justify-center gap-4 w-full py-6 rounded-xl font-bold text-2xl text-center transition-all ${
                 currentStep === 3
                   ? "bg-green-600 text-white hover:bg-green-700 shadow-lg shadow-green-600/30"
                   : "bg-executive-border text-gray-500 cursor-not-allowed pointer-events-none"
               }`}
             >
-              <span className="flex items-center justify-center gap-3">
-                <span className="text-3xl">{aiTool?.emoji || "🤖"}</span>
-                Open {aiTool?.name || "AI Assistant"} & Paste
-              </span>
+              {preferredAI && <AILogo tool={preferredAI} className="w-8 h-8" />}
+              Open {aiTool?.name || "AI Assistant"} & Paste
             </a>
           </div>
         </div>
-
-        {/* What the AI will do */}
-        {currentStep === 3 && (
-          <div className="mt-8 p-4 bg-executive-bg rounded-xl border border-executive-border">
-            <p className="text-gray-400 text-sm mb-2">What your AI assistant will do:</p>
-            <p className="text-white">{content.instructions}</p>
-          </div>
-        )}
       </div>
 
       {/* Mark Complete */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { AITool, AI_TOOLS } from "@/lib/types";
+import AILogo from "./AILogos";
 
 interface AIToolSelectorProps {
   selectedTool: AITool;
@@ -28,18 +29,20 @@ export default function AIToolSelector({ selectedTool, onSelect }: AIToolSelecto
             <button
               key={key}
               onClick={() => onSelect(key)}
-              className={`p-5 rounded-xl border-2 transition-all text-left ${
+              className={`p-5 rounded-xl border-2 transition-all flex flex-col items-center ${
                 isSelected
                   ? "border-executive-accent bg-executive-accent/10"
                   : "border-executive-border hover:border-gray-500 bg-executive-bg"
               }`}
             >
-              <div className="text-3xl mb-2">{tool.emoji}</div>
-              <div className={`text-lg font-medium ${isSelected ? "text-white" : "text-gray-300"}`}>
+              <div className={`mb-3 ${isSelected ? "text-white" : "text-gray-400"}`}>
+                <AILogo tool={key} className="w-12 h-12" />
+              </div>
+              <div className={`text-lg font-medium text-center ${isSelected ? "text-white" : "text-gray-300"}`}>
                 {tool.name}
               </div>
               {isSelected && (
-                <div className="text-executive-accent text-sm mt-1">✓ Selected</div>
+                <div className="text-executive-accent text-sm mt-2">✓ Selected</div>
               )}
             </button>
           );

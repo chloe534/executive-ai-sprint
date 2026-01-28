@@ -39,11 +39,13 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
   const handleROISubmit = (entry: ROIEntry) => {
     setShowROIModal(false);
     onComplete(entry);
+    onBack();
   };
 
   const handleROISkip = () => {
     setShowROIModal(false);
     onComplete();
+    onBack();
   };
 
   const getStepStatus = (step: number): "completed" | "active" | "pending" => {
@@ -128,7 +130,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
               Paste your {content.inputLabel} here
             </h2>
           </div>
-          <p className="text-gray-400 mb-4 ml-11">
+          <p className="text-gray-200 mb-4 ml-11 text-lg">
             Don't worry about formatting, just paste it all in. We'll combine it with the instructions above.
           </p>
           <div className="ml-11">
@@ -156,7 +158,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
             </div>
             <h2 className="text-xl font-semibold text-white">Create My AI Request</h2>
           </div>
-          <p className="text-gray-400 mb-4 ml-11">
+          <p className="text-gray-200 mb-4 ml-11 text-lg">
             We'll combine your {content.inputLabel.toLowerCase()} with the instructions and copy it to your clipboard.
           </p>
           <div className="ml-11">
@@ -200,7 +202,7 @@ export default function DayView({ content, isCompleted, preferredAI, onComplete,
               Go to {aiTool?.name || "Your AI Assistant"} and Paste
             </h2>
           </div>
-          <p className="text-gray-400 mb-4 ml-11">
+          <p className="text-gray-200 mb-4 ml-11 text-lg">
             Click the button, then paste with <strong>⌘V</strong> (Mac) or <strong>Ctrl+V</strong> (Windows)
           </p>
           <div className="ml-11">

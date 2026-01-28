@@ -1,0 +1,156 @@
+[
+  {
+    "day": 1,
+    "title": "The Email \"Vibe Check\"",
+    "theWhy": "Cut through email overload by instantly decoding tone and intent.",
+    "theTask": "Paste a long, slightly frustrating email you received.",
+    "requiresInput": true,
+    "inputLabel": "Email",
+    "inputPlaceholder": "Paste the email here...",
+    "instructions": "Summarize the sender's main request and tell me their underlying tone. Suggest a polite, firm response in 3 sentences.",
+    "template": "Please analyze the following email:\n\n---\n{{USER_INPUT}}\n---\n\nSummarize the sender's main request and tell me their underlying tone. Suggest a polite, firm response in 3 sentences."
+  },
+  {
+    "day": 2,
+    "title": "The Meeting TL;DR",
+    "theWhy": "Never lose track of what matters—even when you can't attend.",
+    "theTask": "Paste notes or a transcript from a meeting you attended (or missed).",
+    "requiresInput": true,
+    "inputLabel": "Meeting Notes",
+    "inputPlaceholder": "Paste your meeting notes or transcript here...",
+    "instructions": "What were the 3 most important decisions made, and what are the specific action items for me?",
+    "template": "Please review these meeting notes:\n\n---\n{{USER_INPUT}}\n---\n\nWhat were the 3 most important decisions made, and what are the specific action items for me?"
+  },
+  {
+    "day": 3,
+    "title": "The Document Skimmer",
+    "theWhy": "Stop procrastinating on long reports—extract what matters in seconds.",
+    "theTask": "Paste a long industry report or document you've been putting off reading.",
+    "requiresInput": true,
+    "inputLabel": "Document",
+    "inputPlaceholder": "Paste the document text here...",
+    "instructions": "Give me the 5 key takeaways from this document that a CEO would care about. Ignore the fluff.",
+    "template": "Please analyze this document:\n\n---\n{{USER_INPUT}}\n---\n\nGive me the 5 key takeaways from this document that a CEO would care about. Ignore the fluff."
+  },
+  {
+    "day": 4,
+    "title": "The Strategic Sounding Board",
+    "theWhy": "Get fresh perspectives on tough problems without scheduling another meeting.",
+    "theTask": "Describe a challenge you're currently facing.",
+    "requiresInput": true,
+    "inputLabel": "Your Challenge",
+    "inputPlaceholder": "Describe your challenge here (e.g., 'Team morale is low after a merger')...",
+    "instructions": "Give me 3 unconventional ways to handle this situation, focusing on high-impact, low-cost solutions.",
+    "template": "I'm facing this challenge:\n\n---\n{{USER_INPUT}}\n---\n\nGive me 3 unconventional ways to handle this situation, focusing on high-impact, low-cost solutions."
+  },
+  {
+    "day": 5,
+    "title": "The \"Explain Like I'm 5\" (ELI5)",
+    "theWhy": "Master technical concepts without admitting you don't know them.",
+    "theTask": "Enter a technical term or concept you want to understand better.",
+    "requiresInput": true,
+    "inputLabel": "Topic to Explain",
+    "inputPlaceholder": "Enter a term (e.g., 'Vector Databases', 'Blockchain', 'Machine Learning')...",
+    "instructions": "Explain this to me using a simple metaphor. Why should I care about this for our business?",
+    "template": "Please explain \"{{USER_INPUT}}\" to me using a metaphor involving a library. Why should I care about this for our business?"
+  },
+  {
+    "day": 6,
+    "title": "The Bio-Researcher",
+    "theWhy": "Walk into every meeting knowing exactly what the other person cares about.",
+    "theTask": "Enter the name of someone you're meeting with soon.",
+    "requiresInput": true,
+    "inputLabel": "Person's Name",
+    "inputPlaceholder": "Enter their full name and company/role if known...",
+    "instructions": "Find recent public information about this person. What are their top 3 professional priorities right now?",
+    "template": "I'm meeting with {{USER_INPUT}} soon. Find recent public interviews or articles about them. What are their top 3 professional priorities right now?"
+  },
+  {
+    "day": 7,
+    "title": "The Weekly Review",
+    "theWhy": "Audit your time to shift from shallow work to strategic impact.",
+    "theTask": "List 5 things you did this week.",
+    "requiresInput": true,
+    "inputLabel": "This Week's Tasks",
+    "inputPlaceholder": "List what you worked on this week...",
+    "instructions": "Analyze where I'm spending too much time on 'shallow work' vs. 'strategic work'.",
+    "template": "Here's what I did this week:\n\n---\n{{USER_INPUT}}\n---\n\nBased on these tasks, where am I spending too much time on 'shallow work' vs. 'strategic work'?"
+  },
+  {
+    "day": 8,
+    "title": "The Thought Partner",
+    "theWhy": "Stress-test your ideas before investing real resources.",
+    "theTask": "Describe an idea for a new product, process, or initiative.",
+    "requiresInput": true,
+    "inputLabel": "Your Idea",
+    "inputPlaceholder": "Describe your idea here...",
+    "instructions": "Tell me 3 reasons why it might fail and 3 ways to fix those risks.",
+    "template": "I have an idea I'd like you to stress-test:\n\n---\n{{USER_INPUT}}\n---\n\nTell me 3 reasons why it might fail and 3 ways to fix those risks."
+  },
+  {
+    "day": 9,
+    "title": "Tone Shifting",
+    "theWhy": "Transform dry announcements into messages that inspire action.",
+    "theTask": "Paste a draft of an internal announcement or message.",
+    "requiresInput": true,
+    "inputLabel": "Your Draft",
+    "inputPlaceholder": "Paste your draft message here...",
+    "instructions": "Rewrite this to sound more visionary and inspiring, while remaining transparent about the challenges.",
+    "template": "Please rewrite this message:\n\n---\n{{USER_INPUT}}\n---\n\nRewrite this to sound more visionary and inspiring, while remaining transparent about the challenges."
+  },
+  {
+    "day": 10,
+    "title": "The Data Translator",
+    "theWhy": "Find the story hiding in your numbers that others miss.",
+    "theTask": "Paste a small table of data (e.g., monthly sales, metrics).",
+    "requiresInput": true,
+    "inputLabel": "Data",
+    "inputPlaceholder": "Paste your data here (tables, numbers, metrics)...",
+    "instructions": "What is the most interesting trend in this data that isn't immediately obvious?",
+    "template": "Please analyze this data:\n\n---\n{{USER_INPUT}}\n---\n\nWhat is the most interesting trend in this data that isn't immediately obvious?"
+  },
+  {
+    "day": 11,
+    "title": "The Speechwriter",
+    "theWhy": "Deliver polished remarks without hours of preparation.",
+    "theTask": "Describe the context for remarks you need to give.",
+    "requiresInput": true,
+    "inputLabel": "Context",
+    "inputPlaceholder": "Describe the event, audience, and key points to mention...",
+    "instructions": "Draft a 2-minute opening remark based on this context.",
+    "template": "I need to give brief remarks. Here's the context:\n\n---\n{{USER_INPUT}}\n---\n\nDraft a 2-minute opening remark for this occasion."
+  },
+  {
+    "day": 12,
+    "title": "The Interviewer",
+    "theWhy": "Go beyond rehearsed answers to reveal a candidate's true capabilities.",
+    "theTask": "Paste a candidate's resume and the job description.",
+    "requiresInput": true,
+    "inputLabel": "Resume & Job Description",
+    "inputPlaceholder": "Paste the resume and job description here (redact personal info)...",
+    "instructions": "What are 3 'stress-test' questions I should ask to verify their skills?",
+    "template": "I'm interviewing a candidate. Here's their resume and the job description:\n\n---\n{{USER_INPUT}}\n---\n\nWhat are 3 'stress-test' questions I should ask this candidate to see if they actually have the skills they claim?"
+  },
+  {
+    "day": 13,
+    "title": "Better Instructions 101",
+    "theWhy": "Better instructions lead to dramatically better results.",
+    "theTask": "Think of a request you'd like to make to your AI assistant.",
+    "requiresInput": true,
+    "inputLabel": "Your Request",
+    "inputPlaceholder": "What would you like help with?",
+    "instructions": "I'll ask clarifying questions first to give you a better answer.",
+    "template": "I need help with the following:\n\n---\n{{USER_INPUT}}\n---\n\nBefore you answer, ask me 3 clarifying questions so you can provide a better, more tailored result."
+  },
+  {
+    "day": 14,
+    "title": "Personal AI Manifesto",
+    "theWhy": "Codify your learning into a system that saves you 5+ hours every week.",
+    "theTask": "Describe your role and the types of tasks you do regularly.",
+    "requiresInput": true,
+    "inputLabel": "Your Role & Tasks",
+    "inputPlaceholder": "Describe your job title, responsibilities, and common tasks...",
+    "instructions": "Create a list of 5 'Golden Rules' for how I should use AI to save 5 hours a week.",
+    "template": "Here's information about my role:\n\n---\n{{USER_INPUT}}\n---\n\nCreate a list of 5 'Golden Rules' for how I should use AI in my specific role to save 5 hours a week."
+  }
+]
